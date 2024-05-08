@@ -80,14 +80,11 @@ export async function getServerSideProps() {
   const state = (await UPTIMEFLARE_STATE?.get('state')) as unknown as MonitorState
 
   // Only present these values to client
-  const monitors = workerConfig.monitors.map((monitor) => {
-    return {
-      id: monitor.id,
-      name: monitor.name,
-      tooltip: monitor.tooltip ?? monitor.name,
-      statusPageLink: monitor.statusPageLink ?? monitor.name,
-    }
-  })
+  const keys = [ 'id', 'name', 'tooltip', 'statusPageLink' ];
+  const monitors = keys.reduce((out, key) => {
+    out[key] = workerConfig.monitors[key];
+    return out;
+  }, {});
 
   return { props: { state, monitors } }
 }
