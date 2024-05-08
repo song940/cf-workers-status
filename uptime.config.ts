@@ -17,9 +17,9 @@ const workerConfig = {
     // Example HTTP Monitor
     {
       // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
+      id: 'home',
       // `name` is used at status page and callback message
-      name: 'Home page',
+      name: 'lsong.org',
       // `method` should be a valid HTTP Method
       method: 'GET',
       // `target` is a valid URL
@@ -33,12 +33,12 @@ const workerConfig = {
       // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
       timeout: 10000,
       // [OPTIONAL] headers to be sent
-      headers: {
-        'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
-      },
+      // headers: {
+      //   'User-Agent': 'Uptimeflare',
+      //   Authorization: 'Bearer YOUR_TOKEN_HERE',
+      // },
       // [OPTIONAL] body to be sent
-      body: 'Hello, world!',
+      // body: 'Hello, world!',
       // [OPTIONAL] if specified, the response must contains the keyword to be considered as operational.
       responseKeyword: 'success',
       // [OPTIONAL] if specified, the check will run in your specified region,
@@ -50,9 +50,9 @@ const workerConfig = {
       id: 'lsongone',
       name: 'lsong.one',
       // `method` should be `TCP_PING` for tcp monitors
-      method: 'TCP_PING',
+      method: 'GET',
       // `target` should be `host:port` for tcp monitors
-      target: 'lsong.one',
+      target: 'https://lsong.one',
       tooltip: 'My production server SSH',
       statusPageLink: 'https://example.com',
       timeout: 5000,
@@ -62,9 +62,9 @@ const workerConfig = {
       id: 'lsongme',
       name: 'lsong.me',
       // `method` should be `TCP_PING` for tcp monitors
-      method: 'TCP_PING',
+      method: 'GET',
       // `target` should be `host:port` for tcp monitors
-      target: 'lsong.me',
+      target: 'https://lsong.me',
       tooltip: 'My production server SSH',
       statusPageLink: 'https://example.com',
       timeout: 5000,
