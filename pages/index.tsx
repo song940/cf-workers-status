@@ -81,8 +81,8 @@ export async function getServerSideProps() {
 
   // Only present these values to client
   const keys = [ 'id', 'name', 'tooltip', 'statusPageLink' ];
-  const monitors = keys.reduce((out, key) => {
-    out[key] = workerConfig.monitors[key];
+  const monitors = keys.reduce((out: any, key: string) => {
+    out[key] = (workerConfig.monitors as any)[key];
     return out;
   }, {});
 
