@@ -27,13 +27,13 @@ const workerConfig = {
       id: 'lsongone',
       name: 'lsong.one',
       method: 'GET',
-      target: 'https://lsong.one',
+      target: 'http://lsong.one:8888',
     },
     {
       id: 'lsongme',
       name: 'lsong.me',
       method: 'GET',
-      target: 'https://lsong.me',
+      target: 'http://lsong.me:8888',
     },
   ],
   callbacks: {
