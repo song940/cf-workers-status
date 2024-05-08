@@ -1,3 +1,4 @@
+
 import Head from 'next/head'
 
 import { Inter } from 'next/font/google'
@@ -80,11 +81,14 @@ export async function getServerSideProps() {
   const state = (await UPTIMEFLARE_STATE?.get('state')) as unknown as MonitorState
 
   // Only present these values to client
-  const keys = [ 'id', 'name', 'tooltip', 'statusPageLink' ];
-  const monitors = keys.reduce((out: any, key: string) => {
-    out[key] = (workerConfig.monitors as any)[key];
-    return out;
-  }, {});
+  const monitors = workerConfig.monitors.map((monitor) => {
+    return {
+      id: monitor.id,
+      name: monitor.name,
+      tooltip: monitor.tooltip,
+      statusPageLink: monitor.statusPageLink
+    }
+  })
 
   return { props: { state, monitors } }
 }

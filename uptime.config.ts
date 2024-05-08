@@ -20,6 +20,8 @@ const workerConfig = {
       name: 'lsong.org',
       method: 'GET',
       target: 'https://lsong.org',
+      tooltip: 'lsong.org',
+      statusPageLink: 'https://lsong.org',
     },
     {
       id: 'lsongone',
